@@ -6,6 +6,7 @@
   - [Very Able Variables](#very-able-variables)
     - [Top-Level Constant](#top-level-constant)
   - [I Literally Can't Even](#i-literally-cant-even)
+    - [Large Integer Literals](#large-integer-literals)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -49,3 +50,27 @@ Neighborhood::Yard::Child.new.flower
 ```
 
 ## I Literally Can't Even
+- Ruby has its own unique take on some of these literal syntaxes. In this section, you’ll learn about how to use Ruby’s literals to make your code extra-expressive.
+
+### Large Integer Literals
+- One of the simplest forms of literal is an integer (non-fractional) number.
+- In Ruby, however, there are some options in how you can choose to write out literal integer values.
+
+Quick question: how many zeroes are in this number?
+
+```ruby
+100000000000
+```
+
+It's hard to visually identify the number of digits in a numeric literal.
+For instance, in my US locale we would normally split the number into groups of three digits, with commas:
+
+```ruby
+# 100,000,000,000
+```
+
+Thankfully, we can do something similar in Ruby. So we could rewrite this number like so:
+
+```ruby
+100_000_000_000
+```
