@@ -18,6 +18,34 @@ My notes from [Flawless Ruby Course](https://graceful.dev/courses/flawless-ruby/
 - Working with variables in Ruby
 
 ### Top-Level Constant
-- Constants are...
+- Constants lookups from inside class to top-level environment.
+- First looks in the class level and then in the module level.
+
+
+```ruby
+FLOWER = "Clover"
+
+module Neighborhood
+  FLOWER = "Dogwood"
+
+  module Yard
+    FLOWER = "Rose"
+
+    class Parent
+      FLOWER = "Mountain Laurel"
+    end
+
+    class Child < Parent
+      FLOWER = "Dandelion"
+
+      def flower
+        FLOWER
+      end
+    end
+  end
+end
+Neighborhood::Yard::Child.new.flower
+# => "Dandelion"
+```
 
 ## I Literally Can't Even
